@@ -51,10 +51,11 @@ function sum(arr) {
   arr.forEach(element => {
     if (element.isArray === true) {
       throw "Unsupported data type sir or ma'am"
-    } else if (Object.prototype.toString.call(element) === '[object Object]' ) {
+    } else if (typeof element === 'object' ) {
       throw "Unsupported data type sir or ma'am"
     }
   });
+
   let sumAllNumbers = 0;
   if (arr.length === 0) {
     return 0;
@@ -108,7 +109,25 @@ function averageWordLength(arr) {
 }
 
 // Bonus - Iteration #4.1
-function avg() { }
+function avg(arr) {
+  let average = 0;
+  if (arr.length === 0) {
+    return null;
+  } else {
+    arr.forEach(word => {
+      if (word === true) {
+        average += 1;
+      } else if (word === false) {
+        average += 0;
+      } else if (typeof word === 'string') {
+        average += word.length;
+      } else {
+        average += word;
+      }
+    });
+    return average / arr.length;
+  }
+ }
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -226,7 +245,15 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() { }
+function greatestProduct(arr) { 
+  let greatestProduct = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+
+    }
+  }
+}
 
 
 
