@@ -110,6 +110,9 @@ function averageWordLength(arr) {
 
 // Bonus - Iteration #4.1
 function avg(arr) {
+  function roundToTwo(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
   let average = 0;
   if (arr.length === 0) {
     return null;
@@ -118,14 +121,14 @@ function avg(arr) {
       if (word === true) {
         average += 1;
       } else if (word === false) {
-        average += 0;
+        console.log('hello');
       } else if (typeof word === 'string') {
         average += word.length;
       } else {
         average += word;
       }
     });
-    return average / arr.length;
+    return roundToTwo(average / arr.length);
   }
  }
 
