@@ -47,10 +47,36 @@ function sumNumbers(arr) {
 
 
 // Iteration #3.1 Bonus:
-function sum() {
-
+function sum(arr) {
+  arr.forEach(element => {
+    if (element.isArray === true) {
+      throw "Unsupported data type sir or ma'am"
+    } else if (Object.prototype.toString.call(element) === '[object Object]' ) {
+      throw "Unsupported data type sir or ma'am"
+    }
+  });
+  let sumAllNumbers = 0;
+  if (arr.length === 0) {
+    return 0;
+  } else if (arr.length === 1) {
+    return arr[0];
+  } else {
+    arr.forEach(number => {
+      if (typeof number === 'string') {
+        sumAllNumbers += number.length;
+      } else {
+        sumAllNumbers += number;
+      }
+    });
+    return sumAllNumbers;
+  } 
 }
 
+try {
+  sum(arr);
+} catch (e) {
+  console.error(e);
+}
 
 
 // Iteration #4: Calculate the average
